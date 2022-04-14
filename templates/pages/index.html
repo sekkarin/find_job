@@ -1,0 +1,641 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block body %} {% include 'components/navber.html' %}
+<!-- seach job and region job -->
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="container px-5 bg-green-80 rounded-3">
+          
+        <div class="d-flex justify-content-around text-center pt-3">
+          <div>
+            <img
+              src="{% static 'images/index/bus (1).png' %}"
+              class="rounded-circle"
+              style="width: 53px; height: 52px"
+            />
+            <p class="font-14">รถเมล์</p>
+          </div>
+          <div>
+            <img
+              src="{% static 'images/index/train-station.png' %}"
+              class="rounded-circle"
+              style="width: 53px; height: 52px"
+            />
+            <p class="font-14">รถไฟฟ้า</p>
+          </div>
+          <div>
+            <img
+              src="{% static 'images/index/factory.png' %}"
+              class="rounded-circle"
+              style="width: 53px; height: 52px"
+            />
+            <p class="font-14">นิคมอุตสาหกรรม</p>
+          </div>
+        </div>
+        <form action="" method="get" class="pb-3">
+          <div class="mb-3">
+            <label for="" class="form-label font-24">สถานที่ปฏิบัติงาน</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control"
+              placeholder=""
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label font-24">อำเภอ</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control"
+              placeholder=""
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label font-24">ตำบล</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control"
+              placeholder=""
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label font-24">ประเภทงาน</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control"
+              placeholder=""
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label font-24" for="flexCheckDefault">
+              ทำงานที่บ้าน (Work from Home)
+            </label>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label font-24">คำที่ต้องการค้นหา</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control"
+              placeholder=""
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="text-center">
+            <a
+              href="pages/job-region.html"
+              type="submit"
+              class="btn btn-lg bg-purple-10 w-50 text-white font-24"
+            >
+              ค้นหา
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end row -->
+
+    <div class="col-8">
+      <h2 class="font-32">งานทั้งหมด 55555555 อัตรา</h2>
+      <hr />
+      <div class="container">
+        <div class="d-inline flex-wrap">
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18"
+            href=""
+            role="button"
+            >กรุงเทพและปริมณฑล (63,470)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >ภาคตะวันออกเฉียง เหนือ (3,507)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >ภาคเหนือ (1,854)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >ภาคใต้ (1,072)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >ภูเก็ต (205)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >นิคมฯอมตะนคร (241)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >นิคมฯบางปู (263)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >นครราชสีมา (1,176)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >ภาคตะวันออก (12.642)</a
+          >
+          <a
+            name=""
+            id=""
+            class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+            href="pages/job-region.html"
+            role="button"
+            >Work from Home (1,362)</a
+          >
+
+          <h2 class="font-32">งานเด่น</h2>
+          <hr />
+          <div class="container">
+            <div class="d-inline flex-wrap">
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >ขาย (17,952)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >การตลาด (2,806)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >การเงิน-ธนาคาร (2,351)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >ยานยนต์ (5,985)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >บัญชี (4,013)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >Programmer (4,734)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >Part-time (1,083)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >ภาษาจีน (1,715)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >กราฟิก (1,034)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >ฝ่ายบุคคล (1,731)</a
+              >
+              <a
+                name=""
+                id=""
+                class="btn bg-purple-10 text-white mx-3 my-2 font-18 zoom"
+                href="pages/job-region.html"
+                role="button"
+                >Mobile Developer (198)</a
+              >
+            </div>
+          </div>
+
+          <!-- <p>
+                  <button
+                  type="button"
+                    class="btn mx-2 my-2 border-dark font-18"
+                    data-bs-toggle="collapse"
+                    href="#contentId-1"
+                    aria-expanded="false"
+                    aria-controls="contentId"
+                  >
+                    เพิ่มเติม.....
+                  </button>
+                </p> -->
+        </div>
+      </div>
+
+      <div
+        id="carouselId"
+        class="carousel slide zoom-img"
+        data-bs-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#carouselId"
+            data-bs-slide-to="0"
+            class="active"
+          ></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img
+              src="{% static 'images/index/tuktuk.png' %}"
+              class="d-block w-100 mx-autuo"
+              alt="First slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static 'images/index/kati.png' %}"
+              class="d-block w-100 mx-auto"
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static 'images/index/makro.png' %}"
+              class="d-block w-100 mx-auto"
+              alt="Third slide"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselId"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselId"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end seach job and region job -->
+
+<!-- URGENT JOBS-->
+<section class="container-fluid w-75 mx-auto">
+  <h1 class="mt-3 font-32">URGENT JOBS</h1>
+  <div class="row my-3">
+    <div class="col-6 d-flex justify-content-center zoom-card">
+      <div class="card w-100">
+        <img
+          src="{% static 'images/index/Untitled.png' %}"
+          width="150px"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title font-24">Deliveree (Thailand) Limited</h5>
+          <p class="card-text font-18">
+            Deliveree (Thalland) Limited ปิดรับสมัครพนักงาน Customer Service
+            Agent สนใจสมัคร Click
+          </p>
+          <a href="pages/job.html" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 d-flex justify-content-center zoom-card">
+      <div class="card w-100">
+        <img
+          src="{% static 'images/index/shawpet.png' %}"
+          width="150px"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title font-24">บริษัท ชอว์เพ็ท จำกัด</h5>
+          <p class="card-text font-18">
+            กลุ่มบริษัทชอว์เพ็ทเป็นผู้ผลิต,ผู้นำเข้า,ผู้จัดจำหน่าย
+            สินค้าอุปโภคและบริโภคของสัตว์เลี้ยงภายใต้แบรนพรามี่และพราม่า
+            เราเป็นบริษัทของคนรุ่นใหม่ที่ใส่ใจเกี่ยวกับสัตว์เลี้ยงพร้อมที่จะพัฒนาผลิตสินค้า
+          </p>
+          <a href="pages/job.html" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-6 d-flex justify-content-center zoom-card">
+      <div class="card w-100">
+        <img
+          src="assets/img/index/cash_express.png"
+          height="250px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title font-24">โรงรับจำนำ Cash express</h5>
+          <p class="card-text font-18">
+            Cash express มีวิสัยทัศน์ที่จะเปลี่ยนรูปแบบโรงรับจำนำ แบบดั้งเดิม
+            ให้เป็นโรงรับจำนำที่ทันสมัย
+            จนในปัจจุบันแคชเอ็กซ์เพรสเป็นผู้เชี่ยวชาญด้านการรับจำนำด้วยบริการเทคโนโลยีที่ทันสมัย
+            สะดวก รวดเร็ว และเป็นธรรม
+            พร้อมบริการลูกค้าด้วยบุคลากรที่มีความเชี่ยวชาญเฉพาะด้าน
+          </p>
+          <a href="pages/job.html" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 d-flex justify-content-center zoom-card">
+      <div class="card w-100" style="width: 24rem">
+        <img
+          src="assets/img/index/shinyo.png"
+          height="250px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title font-24">บริษัท ไทยชินเรียว จำกัด</h5>
+          <p class="card-text font-18">
+            ก้าวผ่านปีที่ 35 กับการเติบโตอย่างต่อเนื่อง ของบริษัทซึ่งเป็นผู้นำ
+            ด้านวิศวกรรมการออกแบบและติดตั้งงานระบบโคเจเนอเรชั่น งานโรงไฟฟ้า
+            งานวิศวกรรมเครื่องกลและไฟฟ้า ภายในอาคารและโรงงาน
+            ด้วยความรู้และเทคโนโลยีที่ทันสมัย
+          </p>
+          <a href="pages/job.html" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end URGENT JOBS -->
+
+<!-- list of contents -->
+<section class="container-fluid bg-green-80">
+  <div class="row">
+    <div class="col-4 my-3">
+      <h2 class="font-24">งานแยกตามประเภทงาน</h2>
+      <p>
+        <a href="pages/job-region.html " class="underline font-18">งาน ขาย</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ช่างเทคนิค/อิเลคโทรนิค/ซ่อมบำรุง/ช่างพิมพ์</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน งานบริการลูกค้า - Call Center</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน บุคคล/ฝึกอบรม</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน การตลาด</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ผลิต/ควบคุมคุณภาพ/โรงงาน</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน โยธา/สำรวจ/สถาปัตย์/มัณฑนากร/ประเมินราคา</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน โยธา/สำรวจ/สถาปัตย์/มัณฑนากร/ประเมินราคา</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">งาน วิศวกร</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน Part-time/พนักงานชั่วคราว</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน Freelance</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน อาหาร/เครื่องดื่ม/กุ๊ก/บาร์เทนเดอร์/พนักงานเสิร์ฟ</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >Job Index Company Index</a
+        >
+      </p>
+    </div>
+    <div class="col-4 my-3">
+      <h2 class="font-24">งานแยกตามสถานที่ปฏิบัติงาน</h2>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ใกล้รถไฟฟ้า BTS</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ใกล้รถไฟฟ้า MRT</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ใกล้สายรถเมล์</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน กรุงเทพมหานคร</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน เชียงใหม่</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ฉะเชิงเทรา</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">งาน ชลบุรี</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน นนทบุรี</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ปทุมธานี</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน พระนครศรีอยุธยา</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">งาน ระยอง</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน สมุทรปราการ</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน สมุทรสาคร</a
+        >
+      </p>
+    </div>
+    <div class="col-4 my-3">
+      <h2 class="font-24">สำหรับผู้สมัครงาน</h2>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">หางาน</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ทั้งหมด</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ต่างประเทศ</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน นิคมอุดสาหกรรม</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >งาน ทุพพลภาพ</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >สำหรับบริษัท</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18"
+          >ลงประกาศรับสมัครงาน (สมัครสมาชิก)</a
+        >
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">อัตราโฆษณา</a>
+      </p>
+      <p>
+        <a href="pages/job-region.html" class="underline font-18">ค้นประวัติ</a>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- end list of contents -->
+{% include 'components/footer.html' %} {% endblock %}

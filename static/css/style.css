@@ -1,0 +1,120 @@
+/* style */
+
+:root{
+    --green-main:#E8F6EF;
+    --purple-main:#6A097D;
+    --pink-main:#FDE8E9;
+    --grey-main:#CCCCCC;
+    --mian-font:'Prompt', sans-serif;
+    --font-14:14px;
+    --font-18:18px;
+    --font-24:18px;
+    --font-32:24px;
+  }
+  
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  /* text style */
+  .font-14 {
+    
+    font-family: var(--mian-font);
+    font-size: var(--font-14);
+  }
+  .font-18 {
+  
+    font-family: var(--mian-font);
+    font-size: var(--font-18);
+  }
+  .font-24 {
+    font-family: var(--mian-font);
+    font-size: var(--font-24);
+  }
+  .font-32{
+    font-family: var(--mian-font);
+    font-size: var(--font-32);
+  }
+  .bg-green-80{
+    background-color: var(--green-main);
+  }
+  .bg-grey-10{
+    background-color: #CCCCCC;
+  }
+  .bg-pink-20{
+    background-color: var(--pink-main);
+  }
+  .bg-purple-10{
+    background-color: var(--purple-main) !important;
+  }
+  .color-font-purple{
+    color: #6A097D !important;
+  }
+  a.underline{
+    text-decoration: none;
+    color: black;
+  }
+  .underline{
+    text-decoration: none;
+    color: black;
+  }
+  .w-15{
+    width: 15%;
+  }
+  .bg-pink-20{
+    background-color: #FDE8E9;
+  }
+  /* งานติดตาม */
+  
+  .pink{
+    background-color: pink;
+  }
+  .list-type-none{
+    list-style-type: none;
+  }
+  /* Set the size of the div element that contains the map */
+  #map {
+    height: 500px;
+    /* The height is 400 pixels */
+    width: 250px;
+    /* The width is the width of the web page */
+  }
+  .block-1{
+    position: relative;
+  }
+  .logo{
+    position: absolute;
+    top: 170px;
+    right: 700px;
+    width: 600px;
+    margin-bottom: 100px;
+  }
+  
+  li > a:hover{
+    /* transition-delay: 0.2s; */
+    border-radius: 10px;
+    background-color: #CCCCCC;
+    transform: scale(1.02);
+    transition: background-color .2s;
+    
+  }
+  .btn:hover{
+    transform: scale(1.02);
+    transition: transform .2s; /* Animation */
+  }
+  .zoom:hover{
+    transform: scale(1.1);
+    transition: transform .2s; /* Animation */
+  }
+  .zoom-card:hover{
+    transition: box-shadow .3s; /* Animation */
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .zoom-img:hover{
+    transform: scale(1.02);
+    transition: transform .2s; /* Animation */
+  }
+  .x{
+      background: red
+  }

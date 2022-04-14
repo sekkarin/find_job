@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body %}
+      <!--  navbar -->
+      <nav class="navbar navbar-expand-sm">
+        <!-- Content -->
+        <div class="container-fluid nav-bar">
+          <!-- Brand -->
+          <a href="{% url 'index' %}" class="navbar-brand">
+            <img src="{% static 'icon/undraw_cabin_hkfr.svg' %}" height="46" alt="" />
+            <span class="text-dark">KDU</span>
+          </a>
+        </div>
+      </nav>
+      <!--  end navbar -->
+  
+      <!-- mian form login -->
+      <section class="container-fluid pt-5" style="height: 550px">
+          <div class="row ">
+              <div class="col-6">
+                  <img src="{% static 'images/login/undraw_designer_re_5v95.svg' %}" class="d-block w-50 mx-auto" alt="">
+              </div>
+              <div class="col-6 text-center " >
+                  <div class="bg-green-80 w-75 rounded-2 h-100 p-5 ">
+                      <h3 class="font-24 ">เข้าสู่ระบบ</h3>
+                      <div class="mb-3 w-75 mx-auto ">
+                       <form action="" method="post">  
+                        <input type="text" name="" id="" class="form-control my-3 form-control-lg" placeholder="example@example.com" aria-describedby="helpId">
+                        <input type="password" name="" id="" class="form-control my-3 form-control-lg" placeholder="*************************" aria-describedby="helpId">
+                        <div class="text-end">
+                            <a href="404.html" class="underline text-black-50">ลืมรหัสผ่าน</a>
+                        </div>
+                        <div class="text-center">
+                          <a href="../index.html" class="btn btn-lg bg-purple-10 text-white w-50 font-24">ตกลง</a>
+                        </div>
+                       </form>
+                       <div class="text-center my-4">
+                          <a href="{% url 'register' %}" class="font-18  underline">ยังไม่ได้เป็นสมาชิก KDU? สมัครสมาชิก</a>
+                       </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- end mian form login -->
+      {% include 'components/footer.html' %}
+{% endblock  %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block body %}
+<!--  navbar -->
+<nav class="navbar navbar-expand-sm">
+  <!-- Content -->
+  <div class="container-fluid nav-bar">
+    <!-- Brand -->
+    <a href="{% url 'index' %}" class="navbar-brand">
+      <img src="{% static 'icon/undraw_cabin_hkfr.svg' %}" height="46" alt="" />
+      <span class="text-dark">KDU</span>
+    </a>
+  </div>
+</nav>
+<!--  end navbar -->
+<!-- mian form login -->
+<section class="container-fluid pt-5" style="height: 650px">
+  <div class="row">
+    <div class="col-6 text-center">
+      <p class="font-24 my-5">เจองานที่ใช่ ได้ที่ KDU</p>
+      <img
+        src="{% static 'images/register/undraw_mobile_payments_re_7udl (1).svg' %}"
+        class="d-block w-50 mx-auto"
+        alt=""
+      />
+    </div>
+    <div class="col-6 text-center">
+      <div class="bg-green-80 w-75 rounded-2 h-100 p-5">
+        <h3 class="font-24 fw-bold">ลงทะเบียน</h3>
+        <div class="mb-3 w-75 mx-auto">
+          <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <input
+              type="email"
+              name="email"
+              required
+              id=""
+              class="form-control my-3 form-control-lg"
+              placeholder="อีเมล์"
+              aria-describedby="helpId"
+            />
+            <input
+              type="email"
+              name="confirm_email"
+              required
+              id=""
+              class="form-control my-3 form-control-lg"
+              placeholder="ยืนยันอีเมล์"
+              aria-describedby="helpId"
+            />
+            <input
+              type="password"
+              name="pwd"
+              required
+              id=""
+              class="form-control my-3 form-control-lg"
+              placeholder="รหัสผ่าน"
+              aria-describedby="helpId"
+            />
+            <input
+              type="password"
+              name="confirm_pwd"
+              required
+              id=""
+              class="form-control my-3 form-control-lg"
+              placeholder="ยืนยันรหัสผ่าน"
+              aria-describedby="helpId"
+            />
+            <div class="text-start">
+              <label class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  name="check_service"
+                  id=""
+                  value="True"
+                  class="custom-control-input"
+                />
+                <span class="custom-control-indicator"
+                  >ยอมรับ เงื่อนไขข้อตกลงการใช้บริการ ของ KDU</span
+                >
+              </label>
+            </div>
+            <div class="text-center my-3">
+              <button type="submit" class="btn btn-lg bg-purple-10 text-white w-50 font-24">ตกลง</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end mian form login -->
+{% include 'components/footer.html' %} {% endblock %}
