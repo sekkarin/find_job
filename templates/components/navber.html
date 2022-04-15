@@ -1,64 +1,116 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
-
 {% block body %}
-<!--  navbar -->
-<nav class="navbar navbar-expand-sm">
-    <!-- Content -->
-    <div class="container-fluid ">
-      <!-- Brand -->
-      <a href="{% url 'index' %}" class="navbar-brand">
-        <img src="{% static 'icon/undraw_cabin_hkfr.svg' %}" height="46" alt="" />
-        <span class="text-dark">KDU</span>
-      </a>
-      <button
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarToggle"
-      >
-        <span> <img src="{% static 'images/menu.png ' %}" height="32" alt="" /></span>
-      </button>
-      <!-- Menu -->
-      <div class="navbar-collapse collapse" id="navbarToggle">
-        <ul class="navbar-nav ms-auto mx-3">
-          <li class="nav-item">
-            <a
-              href="pages/job-region.html"
-              class="nav-link font-24 mx-4 text-dark"
-              >หางาน</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="pages/profile.html"
-              class="nav-link mx-4 font-24 text-dark"
-              >ฝากประวัติ</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="pages/followupwork.html"
-              class="nav-link mx-4 font-24 text-dark"
-              >งานของฉัน</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="pages/setup.html" class="nav-link mx-4 font-24 text-dark"
-              >ตั้งค่า</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="{% url 'login' %}"
-              class="nav-link 1 mx-4 font-24 text-dark"
-              >เข้าสู่ระบบ</a
-            >
-          </li>
-        </ul>
+  {% if user.is_authenticated %}
+    <!--  navbar เข้าสู่ระบบ -->
+    <nav class="navbar navbar-expand-sm">
+      <!-- Content -->
+      <div class="container-fluid ">
+        <!-- Brand -->
+        <a href="{% url 'index' %}" class="navbar-brand">
+          <img src="{% static 'icon/undraw_cabin_hkfr.svg' %}" height="46" alt="" />
+          <span class="text-dark">KDU</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggle"
+        >
+          <span> <img src="{% static 'images/menu.png ' %}" height="32" alt="" /></span>
+        </button>
+        <!-- Menu -->
+        <div class="navbar-collapse collapse" id="navbarToggle">
+          <ul class="navbar-nav ms-auto mx-3 ">
+            <li class="nav-item">
+              <a
+                href="{% url 'index' %}"
+                class="nav-link font-24 mx-4 text-dark"
+                >หางาน</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="{% url 'index' %}"
+                class="nav-link font-24 mx-4 text-dark"
+                >งานของฉัน</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="{% url 'login' %}"
+                class="nav-link mx-4 font-24 text-dark"
+                >ฝากประวัติ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'register' %}" class="nav-link mx-4 font-24 text-dark"
+                >ตั้งค่า</a
+              >
+            </li>
+            <li class="nav-item">
+              
+              <a
+                href="{% url 'logout' %}"
+                class="nav-link 1 mx-4 font-24 text-dark"
+                >ออกจากระบบ</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <!--  end navbar  -->
+    </nav>
+    <!--  end navbar  -->
+  {% else %}
+    <!--  navbar ยังไม่เข้าสู่ระบบ -->
+    <nav class="navbar navbar-expand-sm">
+      <!-- Content -->
+      <div class="container-fluid ">
+        <!-- Brand -->
+        <a href="{% url 'index' %}" class="navbar-brand">
+          <img src="{% static 'icon/undraw_cabin_hkfr.svg' %}" height="46" alt="" />
+          <span class="text-dark">KDU</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggle"
+        >
+          <span> <img src="{% static 'images/menu.png ' %}" height="32" alt="" /></span>
+        </button>
+        <!-- Menu -->
+        <div class="navbar-collapse collapse" id="navbarToggle">
+          <ul class="navbar-nav ms-auto mx-3">
+            <li class="nav-item">
+              <a
+                href="{% url 'index' %}"
+                class="nav-link font-24 mx-4 text-dark"
+                >หางาน</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="{% url 'login' %}"
+                class="nav-link mx-4 font-24 text-dark"
+                >ฝากประวัติ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'register' %}" class="nav-link mx-4 font-24 text-dark"
+                >สมัครสมาชิก</a
+              >
+            </li>
+            <li class="nav-item">
+              
+              <a
+                href="{% url 'login' %}"
+                class="nav-link 1 mx-4 font-24 text-dark"
+                >เข้าสู่ระบบ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--  end navbar  -->
+  {% endif %}
 {% endblock  %}

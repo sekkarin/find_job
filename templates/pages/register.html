@@ -13,6 +13,8 @@
   </div>
 </nav>
 <!--  end navbar -->
+
+
 <!-- mian form login -->
 <section class="container-fluid pt-5" style="height: 650px">
   <div class="row">
@@ -27,9 +29,23 @@
     <div class="col-6 text-center">
       <div class="bg-green-80 w-75 rounded-2 h-100 p-5">
         <h3 class="font-24 fw-bold">ลงทะเบียน</h3>
+        {% if  msg  %}
+          <div class="alert alert-danger text-center "  role="alert">
+            {{msg}}
+          </div>
+        {% endif %}
         <div class="mb-3 w-75 mx-auto">
           <form action="{% url 'register' %}" method="post">
             {% csrf_token %}
+            <input
+              type="text"
+              name="username"
+              required
+              id=""
+              class="form-control my-3 form-control-lg"
+              placeholder="ชื่อผู้ใช้งาน"
+              aria-describedby="helpId"
+            />
             <input
               type="email"
               name="email"
@@ -73,6 +89,7 @@
                   name="check_service"
                   id=""
                   value="True"
+                  required
                   class="custom-control-input"
                 />
                 <span class="custom-control-indicator"
@@ -83,6 +100,7 @@
             <div class="text-center my-3">
               <button type="submit" class="btn btn-lg bg-purple-10 text-white w-50 font-24">ตกลง</button>
             </div>
+            <a href="{% url 'login' %} " class="font-18  underline">เข้าสู่ระบบ</a>
           </form>
         </div>
       </div>
