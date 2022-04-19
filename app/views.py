@@ -3,6 +3,8 @@ from django.shortcuts import render , HttpResponse ,redirect
 from django.contrib.auth.models import User ,auth
 from django.contrib.auth import authenticate
 from company.models import *
+from .forms import UploadFile
+
 
 # Create your views here.
 def index(request):
@@ -51,18 +53,16 @@ def logout(request):
     auth.logout(request)
     return redirect('index')
 
-def cookie_test(request):
-    request.session.set_test_cookie()
-    return render(request, 'pages/cookie-test.html')
-def cookie_test_result(request):
-    result = request.session.test_cookie_worked()
-
-    if result == True:
-        request.session.delete_test_cookie()
-    return render(request, 'pages/cookie-test.html',{"result":result})
-
 def job(request,id):
-    # Store.objects.annotate(min_price=Min('books__price'), max_price=Max('books__price'))
-    
+
     job = Job.objects.get(id=id)
     return render(request, 'pages/job.html',{"job":job})
+
+def upload_file(request):
+    if request.method == "POST":
+        file = UploadFile(request.POST,request.FILES)
+        if file.is_valid():
+            file = request.FILES['file']
+            print(file.name,file.content_type)
+    form =UploadFile()
+    return render(request, 'pages/upload_file.html',{'form':form})

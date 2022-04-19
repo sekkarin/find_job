@@ -11,12 +11,12 @@
           <div class="col-12 w-75 mx-auto justify-content-start flex-row d-flex">
             <img
               class="border border-dark zoom-img"
-              src="{% static 'images/company/logo-pompany/furniture.png' %}"
+              src="{{job.id_company.image}}}"
               width="250px"
               alt=""
             />
             <div class="align-self-center px-3">
-              <h1 class="font-32">บริษัท เฟอร์นิเจอร์ จำกัด มหารถชน</h1>
+              <h1 class="font-32">{{job.id_company.name_company}}</h1>
               <a href="company.html" class="underline color-font-purple font-24 "
                 >ดูรายละเอียดบริษัท</a
               >
@@ -63,7 +63,7 @@
               <div class="col-4">
                 <ul class="list-type-none font-24">
                   <li>{{job.location}}</li>
-                  <li>โดยรวม 30,000 บาท</li>
+                  <li>{{job.salary}} บาท</li>
                   <li>{{job.job_title}}</li>
                   <li>ทางออนไลน์</li>
                 </ul>
@@ -148,9 +148,9 @@
         </ul>
         <h1 class="font-24 color-font-purple fw-bold">ติดต่อเจ้าหน้าที่สรรหา</h1>
         <ul class="list-unstyled font-24">
-          <li>addess</li>
-          <li>Email: <span class="color-font-purple">prinxchengshan_111@trustmail.jobthai.com </span>(อีเมลนี้ใช้สำหรับการติดต่อและสมัครงาน)</li>
-          <li>เว็บไซต์ : <span class="color-font-purple">http://en.prinxchengshan.com</span> </li>
+          <li>{{job.id_company.address}}</li>
+          <li>Email: <span class="color-font-purple">{{job.id_company.contact}} </span>(อีเมลนี้ใช้สำหรับการติดต่อและสมัครงาน)</li>
+        
         </ul>
         <h1 class="font-24 color-font-purple fw-bold">สถานที่ปฏิบัติงาน</h1>
         <ul class="list-unstyled font-24">
