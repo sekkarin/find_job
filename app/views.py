@@ -1,16 +1,20 @@
-from django.shortcuts import render , HttpResponse ,redirect
+from django.shortcuts import render , HttpResponse ,redirect ,HttpResponseRedirect
 # from app.models import User
 from django.contrib.auth.models import User ,auth
 from django.contrib.auth import authenticate
 from company.models import *
 from .forms import UploadFile
+from app.models import *
+
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 
 
 # Create your views here.
 def index(request):
     jobs = Job.objects.all()
     
-    return render(request, 'pages/index.html',{"jobs":jobs.values(),"totle_job":jobs.count()})
+    return render(request, 'pages/index.html',{"jobs":jobs,"totle_job":jobs.count()})
 
 def login(request):
     if request.method == "POST":
@@ -58,11 +62,40 @@ def job(request,id):
     job = Job.objects.get(id=id)
     return render(request, 'pages/job.html',{"job":job})
 
+
 def upload_file(request):
-    if request.method == "POST":
-        file = UploadFile(request.POST,request.FILES)
-        if file.is_valid():
+    if request.method == 'POST':
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
             file = request.FILES['file']
-            print(file.name,file.content_type)
-    form =UploadFile()
-    return render(request, 'pages/upload_file.html',{'form':form})
+
+            #เปิดไฟล์ในโฟลเดอร์ media ตามที่ได้สร้างเอาไว้ โดยใช้ชือเดียวกับไฟล์ที่อัปโหลดขึ้น
+            #เพื่อเขียน (w) ในโหมดไบนารี (b) ถ้ายังไม่มีอยู่ก่อน ให้สร้างขึ้นใหม่ (+)
+            with open(f'media/upload/{file.name}', 'wb+') as target:
+                #แบ่งไฟล์เป็นส่วนย่อยๆ แล้วนำมาเขียนลงในไฟล์เป้าหมายต่อเนื่องกันจนครบ
+                for chunk in file.chunks():
+                    target.write(chunk)
+
+                #หรืออ่านเนื้อหาของไฟล์ทั้งหมด แล้วเขียนพร้อมกันทีเดียว
+                #โดยไม่ต้องใช้ลูป for แต่ไม่ควรกับไฟล์ที่มีขนาดใหญ่
+                #target.write(f.read())
+
+        else:
+            file = None
+
+    else:
+        form = UploadFile()
+        file = None
+    
+    return render(request, 'pages/upload_file.html', {'form':form, 'file':file})
+
+def simple_upload(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('uploadfile')
+    else:
+        form = DocumentForm()
+    data = Document.objects.get(id=4)
+    return render(request, 'pages/upload_file.html', {'form': form,'data':data})

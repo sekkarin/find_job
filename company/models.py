@@ -17,7 +17,8 @@ class Company(models.Model):
     contact = models.CharField(max_length=50)
     discripts = models.CharField(max_length=300)
     welfare  = models.CharField(max_length=50)
-    image = models.URLField(max_length=200)
+    
+    image = models.FileField(upload_to='media/img/company',default="None")
     # id_job = models.ForeignKey(Job, on_delete=models.CASCADE)
     # id_job = models.IntegerField(default=0)
     def __str__(self):

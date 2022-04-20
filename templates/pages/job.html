@@ -9,12 +9,8 @@
     <section class="container-fluid">
         <div class="row">
           <div class="col-12 w-75 mx-auto justify-content-start flex-row d-flex">
-            <img
-              class="border border-dark zoom-img"
-              src="{{job.id_company.image}}}"
-              width="250px"
-              alt=""
-            />
+            <img src="{{job.id_company.image.url}}"  class="card-img-top " style="width: 206px;
+            height: 167px;" alt="..."> 
             <div class="align-self-center px-3">
               <h1 class="font-32">{{job.id_company.name_company}}</h1>
               <a href="company.html" class="underline color-font-purple font-24 "
