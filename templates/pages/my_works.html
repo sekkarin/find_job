@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block body %} {% include 'components/navber.html' %}
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <a
+        name=""
+        id=""
+        class="btn bg-purple-10 btn-lg w-100 font-32 text-white text-start"
+        href="#"
+        role="button"
+        ><img
+          width="40px"
+          src="{% static 'images/followuptasks/idea.png' %}"
+          alt=""
+        />
+        งานที่สนใจ <span class="ms-auto"> ({{datas.count}})</span></a
+      >
+      <a
+        name=""
+        id=""
+        class="btn btn-lg text-start w-100 font-32"
+        href="#"
+        role="button"
+      >
+        <img
+          width="40px"
+          src="{% static 'images/followuptasks/3d.png' %}"
+          alt=""
+        />
+        งานที่สมัคร (0)</a
+      >
+      <!-- <a name="" id="" class="btn  btn-lg text-start w-100 font-32" href="#" role="button"><img width="40px" src="../assets/img/followuptasks/dollar.png" alt=""> บริษัทที่ดูประวัติ (0)</a> -->
+    </div>
+    <div class="col-9">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="d-flex d-inline justify-content-between">
+            <h1 class="font-32">เลือก (0)</h1>
+
+            <a
+              name=""
+              id=""
+              class="btn btn-danger btn-lg w-15 text-center"
+              href="#"
+              role="button"
+            >
+              ลบ
+            </a>
+          </div>
+        </div>
+        {% for data in datas %}
+        <div class="row my-3 bg-pink-20 g-4">
+          <div class="col-5 mx-1">
+            <h1 class="font-18 my-2">
+              <li>{{forloop.counter}}  {{data.job_id}}</li>
+            </h1>
+            <p style="text-indent: 1cm" class="font-18">
+              
+            </p>
+            <p style="text-indent: 1cm" class="font-18">
+              <img
+                width="20px"
+                src="{% static 'images/followuptasks/browser.png' %}"
+                alt=""
+              />
+               {{data.job_id.location}}
+            </p>
+            <p style="text-indent: 1cm" class="font-18">
+              <img
+                width="20px"
+                src="{% static 'images/followuptasks/dollar.png' %}"
+                alt=""
+              />
+               {{data.job_id.salary}} บาท
+            </p>
+          </div>
+          
+          <div class="col-6 my-4">
+            <a href="">
+        
+              <img
+                width="120px"
+                src="{{data.job_id.id_company.image.url}}"
+                alt=""
+              />
+            </a>
+          </div>
+          
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

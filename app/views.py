@@ -1,4 +1,5 @@
-from django.shortcuts import render , HttpResponse ,redirect ,HttpResponseRedirect
+from django.shortcuts import render , HttpResponse ,redirect ,HttpResponseRedirect 
+from django.http import JsonResponse
 # from app.models import User
 from django.contrib.auth.models import User ,auth
 from django.contrib.auth import authenticate
@@ -8,13 +9,41 @@ from app.models import *
 
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.core.paginator import Paginator
+
+from django.views.generic.base import TemplateView
 
 
 # Create your views here.
+class MyWork(TemplateView):
+    # pk=kwargs['pk']
+    # print(pk)
+    template_name = "pages/my_works.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # print(kwargs['id'])
+        context['datas'] = My_work.objects.filter(user_id = kwargs['id'])
+        # print(context['datas'].values())
+        return context
+    
+class JobGroup(TemplateView):
+    # pk=kwargs['pk']
+    # print(pk)
+    template_name = "pages/group_job.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # print(kwargs['id'])
+        context['datas'] = Job.objects.filter(id_type = kwargs['id'])
+        print(context['datas'].values())
+        return context
+
 def index(request):
     jobs = Job.objects.all()
-    
-    return render(request, 'pages/index.html',{"jobs":jobs,"totle_job":jobs.count()})
+    type_job = Type_job.objects.all()
+    pgn = Paginator(jobs, 5)
+    return render(request, 'pages/index.html',{"jobs":jobs.order_by("-id"),"totle_job":jobs.count(),'type_job':type_job})
 
 def login(request):
     if request.method == "POST":
@@ -62,6 +91,15 @@ def job(request,id):
     job = Job.objects.get(id=id)
     return render(request, 'pages/job.html',{"job":job})
 
+def like_job(request,id_user,id_job):
+    job = Job.objects.get(id=id_job)
+    user = User.objects.get(id=id_user)
+    print(id_user,id_job)
+    work = My_work(user=user,job_id=job)
+    work.save()
+
+    return JsonResponse({'status':200})
+        
 
 def upload_file(request):
     if request.method == 'POST':
