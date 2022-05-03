@@ -15,6 +15,9 @@ from django.views.generic.base import TemplateView
 
 
 # Create your views here.
+class Job_app(TemplateView):
+    template_name = "pages/job_app.html"
+
 class MyWork(TemplateView):
     # pk=kwargs['pk']
     # print(pk)
@@ -41,9 +44,11 @@ class JobGroup(TemplateView):
 
 def index(request):
     jobs = Job.objects.all()
+    job_count = jobs.count()
+    jobs = jobs.order_by('-id')[0:8]
     type_job = Type_job.objects.all()
-    pgn = Paginator(jobs, 5)
-    return render(request, 'pages/index.html',{"jobs":jobs.order_by("-id"),"totle_job":jobs.count(),'type_job':type_job})
+    
+    return render(request, 'pages/index.html',{"jobs":jobs,"totle_job":job_count,'type_job':type_job})
 
 def login(request):
     if request.method == "POST":

@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from app.models import *
 # Create your models here.
 
 class Type_job (models.Model):
@@ -40,6 +41,23 @@ class Job(models.Model):
     def __str__(self):
         return self.name_job
 
+class Job_application(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    date = models.DateTimeField(auto_now_add=True)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name="member_application")
+    # job = models.ForeignKey(Job,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE,default=1)
+    
+    
+    # class Meta:
+    #     verbose_name = _("register")
+    #     verbose_name_plural = _("registers")
+
+    # def __str__(self):
+    #     return self.id
+
+    # def get_absolute_url(self):
+    #     return reverse("register_detail", kwargs={"pk": self.pk})
     
 
 

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from app.views import   JobGroup , MyWork
+from app.views import   JobGroup , MyWork ,Job_app
 urlpatterns = [
     path('',views.index,name="index"),
     path('login/',views.login,name='login'),
@@ -11,4 +11,5 @@ urlpatterns = [
     path("job_group/<int:id>/", JobGroup.as_view(), name="groupjob"),
     path("my_works/<int:id>/",MyWork.as_view(),name='mywork'),
     path('like_job/<int:id_user>/<int:id_job>/',views.like_job,name="likejob"),
+    path('job_app/<int:id_user>/',Job_app.as_view(),name="jobApp"),
 ]

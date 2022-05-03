@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django import forms 
 from django.forms import ModelForm ,Form
 from company.models import Job
+
 # Create your models here.
 class Like_job(models.Model):
     id_like_job = models.BigAutoField(primary_key=True)
@@ -18,6 +19,7 @@ class My_work(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     job_id = models.ForeignKey(Job,on_delete=models.CASCADE)
     added = models.DateField(auto_now_add=True)
+    
     
     
     
